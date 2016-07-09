@@ -312,10 +312,10 @@ namespace RNNSharp
             DateTime start = DateTime.Now;
             Logger.WriteLine("Iter " + iter + " begins with learning rate alpha = " + RNNHelper.LearningRate + " ...");
 
-            //Initialize varibles
+            //Initialize variables
             logp = 0;
 
-            //Shffle training corpus
+            //Shuffle training corpus
             trainingSet.Shuffle();
 
             int numSequence = trainingSet.SequenceList.Count;
@@ -356,7 +356,7 @@ namespace RNNSharp
 
                 if (SaveStep > 0 && (curSequence + 1) % SaveStep == 0)
                 {
-                    //After processed every m_SaveStep sentences, save current model into a temporary file
+                    //After processing every m_SaveStep sentences, save current model into a temporary file
                     Logger.WriteLine("Saving temporary model into file...");
                     SaveModel(ModelTempFile);
                 }
@@ -383,7 +383,7 @@ namespace RNNSharp
             int tknErrCnt = 0;
             int sentErrCnt = 0;
 
-            //Initialize varibles
+            //Initialize variables
             logp = 0;
             int numSequence = validationSet.SequenceList.Count;
             for (int curSequence = 0; curSequence < numSequence; curSequence++)
