@@ -10,24 +10,6 @@ namespace ConvertCorpus
 {
     class Program
     {
-        static int ArgPos(string str, string[] args)
-        {
-            int a;
-            for (a = 0; a < args.Length; a++)
-            {
-                if (str == args[a])
-                {
-                    if (a == args.Length - 1)
-                    {
-                        Logger.WriteLine("Argument missing for {0}", str);
-                        return -1;
-                    }
-                    return a;
-                }
-            }
-            return -1;
-        }
-
         public static void ConvertFormat(string strInputFile, string strOutputFile)
         {
             StreamReader sr = new StreamReader(strInputFile);
